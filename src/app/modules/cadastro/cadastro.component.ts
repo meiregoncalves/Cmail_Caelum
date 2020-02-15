@@ -15,7 +15,14 @@ export class CmailCadastroComponent {
     });
 
     handleCadastrarUsuario()	{
-      console.log(this.formCadastro.value);
+      if (this.formCadastro.invalid)
+      {
+        console.error('Form	inválido!	->',	this.formCadastro.invalid);
+				return;
+      }
+      else{
+        console.log(this.formCadastro.value);
+      }
     }    
 
     constructor() {
