@@ -1,4 +1,4 @@
-import { Component, ElementRef } from '@angular/core';
+import { Component, ElementRef, Input } from '@angular/core';
 
 @Component({
   selector: 'cmail-form-field',
@@ -7,17 +7,19 @@ import { Component, ElementRef } from '@angular/core';
 export class CmailFormFieldComponent {
   valorDaLabel = "";
   idDaLabel = "";
+  @Input() campo = "";
 
   ngOnInit() {
     const inputDaTela = this.elementRef.nativeElement;
+    const input = inputDaTela.querySelector('input');
 
-    const placeholder = inputDaTela.querySelector('input').getAttribute('placeholder');
+    const placeholder = input.getAttribute('placeholder');
     this.valorDaLabel = placeholder;
     console.log(this.valorDaLabel);
-    inputDaTela.querySelector('input').setAttribute('placeholder', ' ');    
+    input.setAttribute('placeholder', ' ');    
 
-    this.idDaLabel = inputDaTela.querySelector('input').getAttribute('name');
-    inputDaTela.querySelector('input').setAttribute('id', this.idDaLabel);  
+    this.idDaLabel = input.getAttribute('name');
+    input.setAttribute('id', this.idDaLabel);  
   }
 
   constructor (private elementRef: ElementRef){

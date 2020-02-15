@@ -1,5 +1,6 @@
 <div class="cmailInputForm">
-    <div       
+    <div  
+      [ngClass] = "{ 'is-invalid' : campo.invalid && campo.touched }"    
       class="mdl-textfield mdl-textfield--floating-label">
 
       <ng-content></ng-content>
