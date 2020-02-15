@@ -8,6 +8,7 @@ import { CmailCadastroComponent } from './modules/cadastro/cadastro.component';
 import { ModuloDeRotasConfiguradas } from './app.routes';
 import { CmailInboxComponent } from './modules/inbox/inbox.component';
 import { CmailFormFieldComponent } from './components/cmail-form-group/cmail-form-group.component';
+import { cmailInputFieldDirective } from './components/cmail-form-group/cmail-input-field.directive';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { CmailFormFieldComponent } from './components/cmail-form-group/cmail-for
     HeaderComponent,
     CmailCadastroComponent,
     CmailInboxComponent,
-    CmailFormFieldComponent
+    CmailFormFieldComponent,
+    cmailInputFieldDirective
   ],
   imports: [
     BrowserModule,
