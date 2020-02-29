@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { map, catchError } from 'rxjs/operators';
 
 function validateUserName(FormControl) {
   const url = `http://localhost:3200/users/validation/${FormControl.value}`;
@@ -65,7 +66,28 @@ export class CmailCadastroComponent {
     }    
 
     constructor(private httpClient: HttpClient) {
+      const url = `http://localhost:3200/users/validation/omariosouto`;
 
+      this.httpClient.get(url)
+      .pipe(
+        map((input: string) => {
+          console.warn('Dentro do map:', input);
+          return input.toUpperCase();
+        }),
+        catchError(() => {
+          return 'Deu merda';
+        })
+      )
+      .subscribe((dados) => {
+        console.warn('Deu certo', dados)
+      },
+      () => {
+        console.log('Deu ruim');
+      },
+      () => {
+        console.log('terminou');
+      }
+      )
     }
 
     validateUserNameComRxJS(FormControl) {
