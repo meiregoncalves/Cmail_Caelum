@@ -1,10 +1,10 @@
 <form [formGroup]="formCadastro" (ngSubmit)="handleCadastrarUsuario()">
-    <cmail-form-field [campo]="formCadastro.get('nome')">
+    <cmail-form-field [campo]="formCadastro.get('name')">
         <input 
             cmailInputField 
-            name="nome"
-            formControlName="nome"
-            placeholder="Nome">
+            name="name"
+            formControlName="name"
+            placeholder="Nome">         
     </cmail-form-field>    
 
     <cmail-form-field [campo]="formCadastro.get('username')">
@@ -13,7 +13,21 @@
             name="username"
             formControlName="username"
             placeholder="Usuário">
+            <span  class="mdl-textfield__error">
+                {{ formCadastro.get('username').errors | json }}
+            </span>               
     </cmail-form-field>
+
+    <cmail-form-field [campo]="formCadastro.get('phone')">
+        <input 
+            cmailInputField 
+            name="phone"
+            formControlName="phone"
+            placeholder="Telefone">
+            <span *ngIf="formCadastro.get('phone').errors?.pattern" class="mdl-textfield__error">
+                Informar um telefone com "2222-2222" ou celular com "2222-22229" é obrigatório
+            </span>
+    </cmail-form-field>  
 
     <cmail-form-field [campo]="formCadastro.get('senha')">
         <input 
