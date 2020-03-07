@@ -10,9 +10,22 @@ export class CmailInboxComponent {
   isNewEmailFormActive = false;
 
   emails = [
-  ]
+    {
+      id: "dflskdjflcds",
+      assunto: "E-mail 1",
+      para: "teste@cmail.com",
+      conteudo: "conteúdo 1"
+    },
+    {
+      id: "dflskdjfloo",
+      assunto: "E-mail 2",
+      para: "teste@cmail.com",
+      conteudo: "conteúdo 2"
+    }
+  ];
 
   novoEmail = {
+    id:"",
     assunto: "",
     para: "",
     conteudo: ""
@@ -28,6 +41,20 @@ export class CmailInboxComponent {
     }
     
     this.emails.push(this.novoEmail);
-    this.novoEmail = { assunto : "", para : "", conteudo: ""}
+    this.novoEmail = { id : "", assunto : "", para : "", conteudo: ""}
+  }
+
+  apagaEmail(idDoEmailQueVaiSumir: string) {
+    console.log('emails', this.emails);
+    const listaAtualizadaDeEmails = this.emails.filter((emailAtual) => {
+      if (emailAtual.id === idDoEmailQueVaiSumir) {
+        return false;
+      }
+
+      return true;
+    });
+
+    console.log('lista atualizada', listaAtualizadaDeEmails);
+    this.emails = listaAtualizadaDeEmails;
   }
 }

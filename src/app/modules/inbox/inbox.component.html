@@ -3,11 +3,13 @@
         <main class="mdl-layout__content">
           <div class="page-content">
             
-            <article *ngFor  = "let email of emails">
-              <h1>Assunto: {{ email.assunto }}</h1>
-              <p>Para: {{ email.para }}</p>
-              <p>Conteúdo: {{ email.conteudo }}</p>
-            </article>
+            <cmail-card
+              *ngFor="let email of emails"
+              assunto="email.assunto"
+              para="email.para"
+              conteudo="email.conteudo">
+              <button (click)="apagaEmail(email.id)">Apagar email</button>
+            </cmail-card>
     
             <div class="mdl-grid">
               <!-- Floating Multiline Textfield -->

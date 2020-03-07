@@ -2,12 +2,14 @@ import { CmailFormFieldComponent } from './cmail-form-group/cmail-form-group.com
 import { cmailInputFieldDirective } from './cmail-form-group/cmail-input-field.directive';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CmailCardComponent } from './cmail-card/cmail-card.component';
 
 
 @NgModule({
   declarations: [
     CmailFormFieldComponent,
     cmailInputFieldDirective,
+    CmailCardComponent,
   ],
   imports: [
     CommonModule,
@@ -15,6 +17,7 @@ import { CommonModule } from '@angular/common';
   exports: [
     CmailFormFieldComponent,
     cmailInputFieldDirective,
+    CmailCardComponent,
   ],
 })
 export class SharedComponentsModule {}
