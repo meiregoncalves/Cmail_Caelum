@@ -12,6 +12,7 @@ import { CmailFormFieldComponent } from './components/cmail-form-group/cmail-for
 import { cmailInputFieldDirective } from './components/cmail-form-group/cmail-input-field.directive';
 import { LoginComponent } from './modules/login/login.component';
 import { SharedComponentsModule } from './components/shared.components.module';
+import { AuthGuard } from './guards/auth.guards';
 
 @NgModule({
   declarations: [ // Components, Diretivas
@@ -30,7 +31,7 @@ import { SharedComponentsModule } from './components/shared.components.module';
     SharedComponentsModule,
     ModuloDeRotasConfiguradas
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [ AuthGuard ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

@@ -52,7 +52,7 @@ export class LoginService {
       console.log(respostaDoServerEmObjeto.token);
 
       // guardamos o dado
-        
+      sessionStorage.setItem('TOKEN',respostaDoServerEmObjeto.token)
 
       // direciona o usuário pra alguma pagina
       return respostaDoServerEmObjeto;

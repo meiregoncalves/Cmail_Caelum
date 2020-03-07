@@ -19,8 +19,8 @@ export class LoginComponent {
 
     titulo: string = 'Página de login';
     formLogin = new FormGroup({
-        login : new FormControl('', [Validators.email, Validators.required]),
-        senha : new FormControl('', [Validators.required])
+        login : new FormControl('meirecosta@cmail.com.br', [Validators.email, Validators.required]),
+        senha : new FormControl('123', [Validators.required])
     })
     handleLoginUsuario() {
         if (this.formLogin.invalid){
