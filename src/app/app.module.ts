@@ -10,25 +10,27 @@ import { ModuloDeRotasConfiguradas } from './app.routes';
 import { CmailInboxComponent } from './modules/inbox/inbox.component';
 import { CmailFormFieldComponent } from './components/cmail-form-group/cmail-form-group.component';
 import { cmailInputFieldDirective } from './components/cmail-form-group/cmail-input-field.directive';
+import { LoginComponent } from './modules/login/login.component';
+import { SharedComponentsModule } from './components/shared.components.module';
 
 @NgModule({
-  declarations: [
+  declarations: [ // Components, Diretivas
     AppComponent,
     HeaderComponent,
     CmailCadastroComponent,
     CmailInboxComponent,
-    CmailFormFieldComponent,
-    cmailInputFieldDirective
+    // CmailFormGroup,
+    // CmailInputFieldDirective
   ],
-  imports: [
+  imports: [ 
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    SharedComponentsModule,
     ModuloDeRotasConfiguradas
   ],
-  providers: [
-  ],
-  bootstrap: [AppComponent],
+  providers: [],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -7,7 +7,7 @@
             placeholder="Login">         
     </cmail-form-field>    
 
-    <cmail-form-field [campo]="formCadastro.get('senha')">
+    <cmail-form-field [campo]="formLogin.get('senha')">
         <input 
             cmailInputField 
             name="senha"
@@ -15,7 +15,9 @@
             placeholder="Senha">
     </cmail-form-field>   
     
-    <a href="/">Esqueci minha senha</a>
+    <p>
+        <a href="/">Esqueci minha senha?</a>
+    </p>
 
     <input type="submit" value="Login">
 </form>
