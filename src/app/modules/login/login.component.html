@@ -1,0 +1,21 @@
+<form [formGroup]="formLogin" (ngSubmit)="handleLoginUsuario()">
+    <cmail-form-field [campo]="formLogin.get('login')">
+        <input 
+            cmailInputField 
+            name="login"
+            formControlName="login"
+            placeholder="Login">         
+    </cmail-form-field>    
+
+    <cmail-form-field [campo]="formCadastro.get('senha')">
+        <input 
+            cmailInputField 
+            name="senha"
+            formControlName="senha"
+            placeholder="Senha">
+    </cmail-form-field>   
+    
+    <a href="/">Esqueci minha senha</a>
+
+    <input type="submit" value="Login">
+</form>
